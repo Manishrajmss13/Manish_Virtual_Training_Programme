@@ -1,0 +1,24 @@
+Q1
+
+
+
+manish@boss:~/Linux_training/Module_3$ ls src
+f1.txt  f2.txt  f3.txt  f4.cpp  f5.py  f6.py  f7.c
+manish@boss:~/Linux_training/Module_3$ ./backup_manager.sh src dest
+Usage: ./backup_manager.sh <source_directory> <backup_directory> <file_extension>
+manish@boss:~/Linux_training/Module_3$ ./backup_manager.sh src dest .txt
+Backup directory 'dest' does not exist. Creating it...
+Backup directory created successfully.
+Processing f1.txt (19 bytes)
+Copying src/f1.txt to dest/f1.txt.
+Processing f2.txt (9 bytes)
+Copying src/f2.txt to dest/f2.txt.
+Processing f3.txt (12 bytes)
+Copying src/f3.txt to dest/f3.txt.
+Backup Report - Mon Feb  9 04:21:35 PM IST 2026
+------------------------------------
+Source Directory: src
+Backup Directory: dest
+Total Files Processed: 3
+Total Size of Files Backed Up: 40 bytes
+

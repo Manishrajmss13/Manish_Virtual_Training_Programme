@@ -1,0 +1,67 @@
+Q1.List all files larger than 1MB and save output to a file
+
+manish@boss:~/Linux_practice_area$ find . -type f -size +1M
+./big file.txt
+manish@boss:~/Linux_practice_area$ find . -type f -size +1M > large_files.txt
+manish@boss:~/Linux_practice_area$ cat large_files.txt
+./big file.txt
+
+
+
+
+
+Q2. Replace all occurrences of "localhost" with "127.0.0.1"
+
+manish@boss:~/Linux_practice_area$ cat config.txt
+server_name localhost
+listen 80
+db_host=localhost
+log_host=localhost
+cache_server=localhost
+manish@boss:~/Linux_practice_area$ sed 's/localhost/127.0.0.1/g' config.txt > updated_config.txt
+manish@boss:~/Linux_practice_area$ cat updated_config.txt
+server_name 127.0.0.1
+listen 80
+db_host=127.0.0.1
+log_host=127.0.0.1
+cache_server=127.0.0.1
+
+
+
+
+
+Q3. Search for lines containing "ERROR" but exclude "DEBUG"
+
+manish@boss:~/Linux_practice_area$ grep "ERROR" log.txt | grep -v "DEBUG" 
+ERROR: Unable to connect to the database.
+ERROR: Failed to fetch data from API endpoint '/users'.
+ERROR: Missing required parameter in the request.
+manish@boss:~/Linux_practice_area$ grep "ERROR" log.txt | grep -v "DEBUG"  > filtered_log.txt
+
+
+
+
+
+Q4. Identify the process with highest memory usage and terminate it
+
+manish@boss:~/Linux_practice_area$ ps aux --sort=-%mem | head -n 2
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+manish      8397 14.3  8.6 1461477612 632680 ?   Sl   18:36  33:26 /opt/brave.com/brave/brave --type=renderer --crashpad-handler-pid=2049 --enable-crash-reporter=, --enable-distillability-service --origin-trial-public-key=bYUKPJoPnCxeNvu72j4EmPuK7tr1PAC7SHh8ld9Mw3E=,fMS4mpO6buLQ/QMd+zJmxzty/VQ6B1EUZqoCU04zoRU= --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=175 --time-ticks-at-unix-epoch=-1770570637444433 --launch-time-ticks=5132768617 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,6904616516672141399,2054923171047683330,2097152 --field-trial-handle=3,i,15976228947202600246,18325984610126565867,262144 --variations-seed-version=main@bafec03ca1d12f957c0195600a09bec569f90258 --trace-process-track-uuid=3190709150294195069
+manish@boss:~/Linux_practice_area$ kill 8397
+
+
+
+
+
+Q5. Print all available gateways in sorted order
+
+manish@boss:~/Linux_practice_area$ netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         192.168.1.1     0.0.0.0         UG        0 0          0 wlo1
+192.168.1.0     0.0.0.0         255.255.255.0   U         0 0          0 wlo1
+manish@boss:~/Linux_practice_area$ netstat -rn | tail -n +3 | awk '{print $2}' | uniq | sort
+0.0.0.0
+192.168.1.1
+
+

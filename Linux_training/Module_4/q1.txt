@@ -1,0 +1,21 @@
+manish@boss:~/Linux_training/Module_4$ chmod +x text_extracter.sh 
+manish@boss:~/Linux_training/Module_4$ ./text_extracter.sh input.txt 
+Output saved to output.txt
+manish@boss:~/Linux_training/Module_4$ head -n 5 output.txt 
+          "frame.time": "Dec 31, 2024 12:50:25.890970000 India Standard Time",
+            "wlan.fc.type": "0",
+            "wlan.fc.subtype": "8",
+
+          "frame.time": "Dec 31, 2024 12:50:25.892357000 India Standard Time",
+manish@boss:~/Linux_training/Module_4$ head -n 10 output.txt 
+          "frame.time": "Dec 31, 2024 12:50:25.890970000 India Standard Time",
+            "wlan.fc.type": "0",
+            "wlan.fc.subtype": "8",
+
+          "frame.time": "Dec 31, 2024 12:50:25.892357000 India Standard Time",
+            "wlan.fc.type": "0",
+            "wlan.fc.subtype": "8",
+
+          "frame.time": "Dec 31, 2024 12:50:25.928606000 India Standard Time",
+            "wlan.fc.type": "0",
+

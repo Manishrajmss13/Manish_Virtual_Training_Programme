@@ -1,0 +1,55 @@
+manish@boss:~/Linux_training/Module_5$ chmod +x file_analyzer.sh 
+manish@boss:~/Linux_training/Module_5$ ./file_analyzer.sh --help
+Options:
+        -d <directory>: Directory to search
+        -k <keyword>: Keyword to Search
+        -f <file>:  file to search directly
+        --help: Display the help menu.
+Example:
+#Recursively search a directory for keyword
+./file_analyzer.sh -d <directory_name> -k <keyword_to_search>
+#Search for a keyword in a file
+./file_analyzer.sh -f  <file_name> -k <Keyword_to_search>
+#Display the  help menu
+./file_analyzer.sh --help
+manish@boss:~/Linux_training/Module_5$ ./file_analyzer.sh
+[ERROR] :Key Shouldnot be Empty --help make use of help to see the details
+manish@boss:~/Linux_training/Module_5$ cat errors.log
+[ERROR] :Key Shouldnot be Empty --help make use of help to see the details
+manish@boss:~/Linux_training/Module_5$ ./file_analyzer.sh -x test
+./file_analyzer.sh: illegal option -- x
+[ERROR] :Key Shouldnot be Empty --help make use of help to see the details
+[ERROR] :Invalid Args
+Options:
+        -d <directory>: Directory to search
+        -k <keyword>: Keyword to Search
+        -f <file>:  file to search directly
+        --help: Display the help menu.
+Example:
+#Recursively search a directory for keyword
+./file_analyzer.sh -d <directory_name> -k <keyword_to_search>
+#Search for a keyword in a file
+./file_analyzer.sh -f  <file_name> -k <Keyword_to_search>
+#Display the  help menu
+./file_analyzer.sh --help
+manish@boss:~/Linux_training/Module_5$ ls
+errors.log  file_analyzer.sh  testdir
+manish@boss:~/Linux_training/Module_5$ ls testdir
+file1.txt  file2.txt  subdir
+manish@boss:~/Linux_training/Module_5$ ./file_analyzer.sh -d testdir -k error
+Keywords are valid
+File Name: ./file_analyzer.sh
+No.of Args: 4
+Args: -d testdir -k error
+PID: 12670
+FileName: testdir/file1.txt, Keywords found!:)
+FileName: testdir/file2.txt, Keywords Not found:(
+FileName: testdir/subdir/file3.txt, Keywords found!:)
+manish@boss:~/Linux_training/Module_5$ ./file_analyzer.sh -f testdir/file1.txt -k error
+Keywords are valid
+File Name: ./file_analyzer.sh
+No.of Args: 4
+Args: -f testdir/file1.txt -k error
+PID: 12676
+FileName: testdir/file1.txt, Keywords found!:)
+
