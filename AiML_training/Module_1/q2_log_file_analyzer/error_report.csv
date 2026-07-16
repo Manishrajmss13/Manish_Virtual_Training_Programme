@@ -1,0 +1,9 @@
+Module,Error/Warning Count,Percentage
+InventoryModule,11,14.67
+EmailModule,11,14.67
+AuthModule,10,13.33
+PaymentModule,10,13.33
+DatabaseModule,9,12.0
+LoginModule,9,12.0
+NotificationModule,9,12.0
+OrderModule,6,8.0
