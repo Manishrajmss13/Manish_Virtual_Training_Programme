@@ -1,0 +1,13 @@
+2026-07-31 12:02:32,546 - INFO - ========== Conversion Started ==========
+2026-07-31 12:02:32,566 - INFO - ✓ PyTorch model loaded successfully.
+2026-07-31 12:02:32,587 - INFO - ✓ Validated 50 calibration samples.
+2026-07-31 12:02:32,587 - INFO - Part 1 completed successfully.
+2026-07-31 12:03:03,249 - INFO - ========== Conversion Started ==========
+2026-07-31 12:03:03,257 - INFO - ✓ PyTorch model loaded successfully.
+2026-07-31 12:03:03,263 - INFO - ✓ Validated 50 calibration samples.
+2026-07-31 12:03:54,502 - INFO - ========== Conversion Started ==========
+2026-07-31 12:03:54,543 - INFO - ✓ PyTorch model loaded successfully.
+2026-07-31 12:03:54,551 - INFO - ✓ Validated 50 calibration samples.
+2026-07-31 12:03:55,671 - INFO - ✓ ONNX model exported.
+2026-07-31 12:03:55,672 - INFO - ✓ ONNX model verified.
+2026-07-31 12:03:55,672 - INFO - Part 2 completed successfully.
